@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Galerie digitale</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2E6F7; 
+    color: #4A2C5A;
+  }
+
+  header {
+    background-color: #BFA2D8; 
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  /* header:hover {
+    background-color: #ead3ff; 
+  } */
+
+  header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  header a:hover {
+    color:#533571
+  }
+
+
+  .cadran {
+    padding: 30px;
+    background-color: #EADCF8; 
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+
+  .cadran:hover {
+    transform: translateY(-5px);
+  }
+
+  .images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /*retour ligne*/
+    justify-content: center;
+  }
+
+  figure {
+    text-align: center;
+    margin: 0;
+  }
+
+  figure img {
+    width: auto;
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #543453;
+  }
+
+
+  button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 25px;
+    background-color: #BFA2D8; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  button:hover {
+    background-color: #9C79C1; 
+    transform: scale(1.05);
+  }
+
+  .wip-images {
+    display: none;
+    margin-top: 20px;
+  }
+
+
+</style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">⬅ Retour à l'accueil</a>
+      </header>
+
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture1_.jpg" alt="Image 2">
+        <figcaption>Aquarelle</figcaption>
+      </figure>
+    </div>
+  </div>
+
+
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture2.jpg" alt="Image 4">
+        <figcaption>Aquarelle</figcaption>
+      </figure>
+    </div>
+  </div>
+
+<div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture3__.jpg" alt="Image 4">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+<button onclick="toggleWIP(this)">WIP</button>
+<div class="wip-images">
+  <div class="images">
+    <figure>
+      <img src="images/Peinture3_wipp.jpg" alt="Extra 1">
+      <img src="images/Peinture3_wip.jpg" alt="Extra 1">
+    </figure>
+  </div>
+  </div>
+</div>
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture4.jpg" alt="Image 4">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+    <button onclick="toggleWIP(this)">WIP</button>
+    <div class="wip-images">
+      <div class="images">
+        <figure>
+          <img src="images/Peinture4_wip.jpg" alt="Extra 1">
+          <img src="images/Peinture4_wipp.jpg" alt="Extra 1">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture0.jpg" alt="Image 1">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+    <button onclick="toggleWIP(this)">WIP</button>
+    <div class="wip-images">
+      <div class="images">
+        <figure>
+          <img src="images/Peinture0_wip.jpg" alt="Extra 1">
+          <img src="images/Peinture0_wipp.jpg" alt="Extra 1">
+          <img src="images/Peinture0_wippp.jpg" alt="Extra 1">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+
+<script>
+    function toggleWIP(button) {
+      const wipSection = button.nextElementSibling;
+      if (wipSection.style.display === "block") {
+        wipSection.style.display = "none";
+        button.textContent = "WIP";
+      } else {
+        wipSection.style.display = "block";
+        button.textContent = "Masquer";
+      }
+    }
+    </script>
+</html>
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cadrans avec images et légendes</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2E6F7;
+    color: #4A2C5A;
+  }
+
+  header {
+    background-color: #BFA2D8; 
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+
+  .cadran {
+    padding: 30px;
+    background-color: #EADCF8;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+
+  .cadran:hover {
+    transform: translateY(-5px);
+  }
+
+  .images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .big-image img {
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  .small-images {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .small-images img {
+    width:150px;
+    height: auto;
+  }
+
+  figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #543453;
+  }
+
+
+
+  button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 25px;
+    background-color: #BFA2D8; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  button:hover {
+    background-color: #9C79C1; 
+    transform: scale(1.05);
+  }
+
+  .wip-images {
+    display: none;
+    margin-top: 20px;
+  }
+
+
+</style>
+</head>
+<body>
+
+    <header>
+        <a href="main.html">⬅ Retour à l'accueil</a>
+      </header>
+  Cadran 2
+  <div class="cadran">
+        <div class="images">
+          <div class="big-image">
+            <img src="images/Peinture1_.jpg" alt="Image principale">
+          </div>
+          <div class="small-images">
+            <img src="images/Peinture1.jpg" alt="Image secondaire 1">
+          </div>
+        </div>
+        <figcaption>Aquarelle - série paysages</figcaption>
+    </div>
+
+
+
+  <div class="cadran">
+    <div class="images">
+    <div class="big-image">
+      <figure>
+        <img src="images/Peinture2.jpg" alt="Image 4">
+        <figcaption>Aquarelle</figcaption>
+      </figure>
+    </div>
+    </div>
+  </div>
+
+<div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture3.jpg" alt="Image 4">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+<button onclick="toggleWIP(this)">WIP</button>
+<div class="wip-images">
+  <div class="images">
+    <figure>
+      <img src="images/Peinture3.jpg" alt="Extra 1">
+      <figcaption>Extra image 1</figcaption>
+    </figure>
+  </div>
+  </div>
+</div>
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture4.jpg" alt="Image 4">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+    <button onclick="toggleWIP(this)">WIP</button>
+    <div class="wip-images">
+      <div class="images">
+        <figure>
+          <img src="images/Peinture4.jpg" alt="Extra 1">
+          <figcaption>Extra image 1</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cadran">
+    <div class="images">
+      <figure>
+        <img src="images/Peinture0.jpg" alt="Image 1">
+        <figcaption>Peinture à l'huile</figcaption>
+      </figure>
+    </div>
+    <button onclick="toggleWIP(this)">WIP</button>
+    <div class="wip-images">
+      <div class="images">
+        <figure>
+          <img src="images/Peinture0.jpg" alt="Extra 1">
+          <figcaption>Extra image 1</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+
+<script>
+    function toggleWIP(button) {
+      const wipSection = button.nextElementSibling;
+      if (wipSection.style.display === "block") {
+        wipSection.style.display = "none";
+        button.textContent = "WIP";
+      } else {
+        wipSection.style.display = "block";
+        button.textContent = "Masquer";
+      }
+    }
+    </script>
+</html> 
